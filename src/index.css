@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sand: #E0E7FF;
+  --color-green-accent: #10B981;
+  --color-clay: #F43F5E;
+  --color-dark: #0F172A;
+  --color-gold: #F59E0B;
+  --color-silver: #94A3B8;
+  --color-soft-white: #FFFFFF;
+
+  --animate-shake: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  --animate-shimmer: shimmer 3s infinite;
+  
+  @keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+  }
+}
