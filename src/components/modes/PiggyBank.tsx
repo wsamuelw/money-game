@@ -56,7 +56,7 @@ export function PiggyBank() {
 
       <div className="flex-1 w-full flex justify-center items-center">
         {/* Piggy Bank Area */}
-        <div className="relative w-[400px] h-[280px] flex items-center justify-center mt-4 mb-8">
+        <div className="relative w-[400px] h-[280px] flex items-center justify-center mt-2 mb-4 md:mt-4 md:mb-8 scale-[0.75] sm:scale-[0.85] md:scale-100 transform origin-center">
           
           {/* Piggy Bank Body */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_#ffb3d9_0%,_#ff66a3_50%,_#cc0052_100%)] rounded-[120px] shadow-[0_20px_40px_rgba(0,0,0,0.3),inset_0_-15px_30px_rgba(153,0,51,0.6),inset_0_10px_20px_rgba(255,255,255,0.6)] overflow-hidden z-10">
@@ -112,28 +112,28 @@ export function PiggyBank() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
-                className="absolute inset-[-40px] bg-white/70 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center rounded-[60px] shadow-2xl"
+                className="absolute inset-[-20px] md:inset-[-40px] bg-white/70 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center rounded-[40px] md:rounded-[60px] shadow-2xl"
               >
                 {status === 'won' ? (
                   <>
-                    <h3 className="text-4xl font-black text-green-accent mb-4">Great Job!</h3>
-                    <p className="text-xl text-dark mb-8">You made exactly {formatMoney(targetAmount)}!</p>
+                    <h3 className="text-3xl md:text-4xl font-black text-green-accent mb-2 md:mb-4">Great Job!</h3>
+                    <p className="text-lg md:text-xl text-dark mb-4 md:mb-8">You made exactly {formatMoney(targetAmount)}!</p>
                     <button 
                       onClick={handleNext}
-                      className="flex items-center gap-2 bg-[#FFB703] hover:bg-[#FB8500] text-white px-8 py-4 rounded-full font-bold text-xl shadow-[0_8px_0_#FB8500] hover:translate-y-[4px] hover:shadow-[0_4px_0_#FB8500] transition-all"
+                      className="flex items-center gap-2 bg-[#FFB703] hover:bg-[#FB8500] text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl shadow-[0_6px_0_#FB8500] hover:translate-y-[2px] md:hover:shadow-[0_4px_0_#FB8500] transition-all"
                     >
-                      Next Amount <ArrowRight size={24} />
+                      Next Amount <ArrowRight size={20} className="md:w-6 md:h-6" />
                     </button>
                   </>
                 ) : (
                   <>
-                    <h3 className="text-4xl font-black text-red-500 mb-4">Oops!</h3>
-                    <p className="text-xl text-dark mb-8">That's too much. Try again!</p>
+                    <h3 className="text-3xl md:text-4xl font-black text-red-500 mb-2 md:mb-4">Oops!</h3>
+                    <p className="text-lg md:text-xl text-dark mb-4 md:mb-8">That's too much. Try again!</p>
                     <button 
                       onClick={handleReset}
-                      className="flex items-center gap-2 bg-[#FFB703] hover:bg-[#FB8500] text-white px-8 py-4 rounded-full font-bold text-xl shadow-[0_8px_0_#FB8500] hover:translate-y-[4px] hover:shadow-[0_4px_0_#FB8500] transition-all"
+                      className="flex items-center gap-2 bg-[#FFB703] hover:bg-[#FB8500] text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl shadow-[0_6px_0_#FB8500] hover:translate-y-[2px] md:hover:shadow-[0_4px_0_#FB8500] transition-all"
                     >
-                      <RefreshCcw size={24} /> Try Again
+                      <RefreshCcw size={20} className="md:w-6 md:h-6" /> Try Again
                     </button>
                   </>
                 )}
@@ -143,12 +143,12 @@ export function PiggyBank() {
         </div>
       </div>
       
-      <div className="w-full mt-8 bg-green-accent rounded-t-[50px] p-5 px-10 flex justify-around items-center relative">
+      <div className="w-full mt-2 md:mt-8 bg-green-accent rounded-t-[30px] md:rounded-t-[50px] p-4 md:p-5 px-4 md:px-10 flex flex-wrap justify-around items-center relative gap-2">
         <button 
           onClick={handleReset}
-          className="absolute -top-12 right-10 flex items-center gap-2 bg-white text-green-accent font-bold px-4 py-2 rounded-full shadow-md hover:bg-gray-50 transition-colors"
+          className="absolute -top-12 right-6 md:right-10 flex items-center gap-2 bg-white text-green-accent font-bold px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md hover:bg-gray-50 transition-colors text-sm md:text-base"
         >
-          <RefreshCcw size={20} /> Empty Piggy Bank
+          <RefreshCcw size={16} className="md:w-5 md:h-5" /> Empty Piggy Bank
         </button>
         {coins.map((coin) => (
           <Coin 

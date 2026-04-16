@@ -99,25 +99,25 @@ export function CountCoins() {
         Level {level}: How much do you have?
       </div>
 
-      <div className="flex-1 w-full flex flex-col justify-center items-center gap-10">
-        <div className="relative w-[420px] min-h-[280px] flex flex-col items-center mt-6">
+      <div className="flex-1 w-full flex flex-col justify-center items-center gap-6 md:gap-10">
+        <div className="relative w-[90vw] max-w-[420px] min-h-[240px] md:min-h-[280px] flex flex-col items-center mt-6">
           {/* Metal Frame Top */}
-          <div className="absolute -top-6 w-[280px] h-14 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-400 rounded-t-[40px] z-0 flex justify-between px-10 shadow-[inset_0_2px_5px_rgba(255,255,255,0.8),0_5px_10px_rgba(0,0,0,0.3)] border border-slate-400">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-slate-100 to-slate-400 border border-slate-500 -mt-4 shadow-[0_3px_5px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.9)]" />
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-slate-100 to-slate-400 border border-slate-500 -mt-4 shadow-[0_3px_5px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.9)]" />
+          <div className="absolute -top-6 w-[70%] max-w-[280px] h-14 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-400 rounded-t-[40px] z-0 flex justify-between px-6 md:px-10 shadow-[inset_0_2px_5px_rgba(255,255,255,0.8),0_5px_10px_rgba(0,0,0,0.3)] border border-slate-400">
+            <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-slate-100 to-slate-400 border border-slate-500 -mt-3 md:-mt-4 shadow-[0_3px_5px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.9)]" />
+            <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-slate-100 to-slate-400 border border-slate-500 -mt-3 md:-mt-4 shadow-[0_3px_5px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.9)]" />
           </div>
 
           {/* Purse Body */}
-          <div className="w-full flex-1 bg-gradient-to-b from-[#8B253E] to-[#4A1120] rounded-b-[140px] rounded-t-[50px] shadow-[0_20px_40px_rgba(0,0,0,0.4),inset_0_-10px_20px_rgba(0,0,0,0.5),inset_0_5px_15px_rgba(255,255,255,0.2)] border border-[#3A0D18] relative flex flex-col items-center p-6 z-10">
+          <div className="w-full flex-1 bg-gradient-to-b from-[#8B253E] to-[#4A1120] rounded-b-[100px] md:rounded-b-[140px] rounded-t-[40px] md:rounded-t-[50px] shadow-[0_20px_40px_rgba(0,0,0,0.4),inset_0_-10px_20px_rgba(0,0,0,0.5),inset_0_5px_15px_rgba(255,255,255,0.2)] border border-[#3A0D18] relative flex flex-col items-center p-4 md:p-6 z-10">
             
             {/* Purse stitching */}
-            <div className="absolute inset-3 border-2 border-dashed border-white/20 rounded-b-[130px] rounded-t-[40px] pointer-events-none" />
+            <div className="absolute inset-3 border-2 border-dashed border-white/20 rounded-b-[90px] md:rounded-b-[130px] rounded-t-[30px] md:rounded-t-[40px] pointer-events-none" />
 
             {/* Inner dark area representing the inside of the purse */}
             <div className="absolute top-6 w-[85%] h-36 bg-gradient-to-b from-black/90 to-black/40 rounded-full shadow-[inset_0_10px_20px_rgba(0,0,0,0.8)] pointer-events-none blur-[2px]" />
 
             {/* Coins Container */}
-            <div className="relative z-20 flex flex-wrap justify-center content-start gap-[10px] w-full h-full min-h-[180px] pt-4 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <div className="relative z-20 flex flex-wrap justify-center content-start gap-2 md:gap-[10px] w-full h-full min-h-[150px] md:min-h-[180px] pt-4 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <AnimatePresence>
                 {currentCoins.map((coin, index) => (
                   <motion.div
@@ -136,14 +136,14 @@ export function CountCoins() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="absolute inset-[-20px] bg-white/70 backdrop-blur-md rounded-[60px] flex flex-col items-center justify-center z-30 shadow-2xl"
+                className="absolute inset-[-10px] md:inset-[-20px] bg-white/70 backdrop-blur-md rounded-[40px] md:rounded-[60px] flex flex-col items-center justify-center z-30 shadow-2xl p-4"
               >
-                <div className="bg-soft-white p-6 rounded-[30px] shadow-xl text-center border-4 border-green-accent">
-                  <h3 className="text-3xl font-black text-green-accent mb-2">Correct!</h3>
-                  <p className="text-xl text-dark mb-6">It is {formatMoney(correctAmount)}</p>
+                <div className="bg-soft-white p-4 md:p-6 rounded-[20px] md:rounded-[30px] shadow-xl text-center border-4 border-green-accent w-full max-w-[320px]">
+                  <h3 className="text-2xl md:text-3xl font-black text-green-accent mb-2">Correct!</h3>
+                  <p className="text-lg md:text-xl text-dark mb-4 md:mb-6">It is {formatMoney(correctAmount)}</p>
                   <button 
                     onClick={handleNext}
-                    className="flex items-center gap-2 bg-[#FFB703] hover:bg-[#FB8500] text-white px-8 py-3 rounded-full font-bold text-xl shadow-[0_8px_0_#FB8500] hover:translate-y-[4px] hover:shadow-[0_4px_0_#FB8500] transition-all mx-auto"
+                    className="flex items-center gap-2 bg-[#FFB703] hover:bg-[#FB8500] text-white px-6 md:px-8 py-2 md:py-3 rounded-full font-bold text-lg md:text-xl shadow-[0_6px_0_#FB8500] hover:translate-y-[2px] md:hover:shadow-[0_4px_0_#FB8500] transition-all mx-auto"
                   >
                     Next Level <ArrowRight size={24} />
                   </button>
@@ -153,7 +153,7 @@ export function CountCoins() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-6 mt-4 md:mt-0">
           {options.map((amount) => {
             const isSelected = selectedOption === amount;
             const isCorrect = amount === correctAmount;
@@ -174,7 +174,7 @@ export function CountCoins() {
                 onClick={() => handleOptionClick(amount)}
                 disabled={status === 'won'}
                 className={`
-                  px-8 py-4 rounded-[20px] border-4 font-black text-3xl shadow-md transition-all
+                  px-6 md:px-8 py-3 md:py-4 rounded-[15px] md:rounded-[20px] border-[3px] md:border-4 font-black text-2xl md:text-3xl shadow-md transition-all
                   ${buttonClass}
                 `}
               >

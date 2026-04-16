@@ -17,17 +17,17 @@ export default function App() {
   return (
     <div className="min-h-screen bg-sand font-sans text-dark pb-12 overflow-hidden flex flex-col">
       {/* Header */}
-      <header className="m-5 bg-green-accent rounded-[40px] text-white shadow-[0_4px_0_rgba(0,0,0,0.1)] overflow-x-auto">
-        <div className="max-w-6xl mx-auto px-10 py-4 flex flex-col xl:flex-row items-center justify-between gap-4 min-w-max">
+      <header className="m-3 md:m-5 bg-green-accent rounded-[30px] md:rounded-[40px] text-white shadow-[0_4px_0_rgba(0,0,0,0.1)]">
+        <div className="max-w-6xl mx-auto px-4 md:px-10 py-3 md:py-4 flex flex-col xl:flex-row items-center justify-between gap-3 md:gap-4">
           <div className="flex items-center gap-3">
-            <h1 className="text-[1.5rem] font-[900] tracking-tight uppercase">Money Game</h1>
+            <h1 className="text-[1.2rem] md:text-[1.5rem] font-[900] tracking-tight uppercase">Money Game</h1>
           </div>
           
           {/* Navigation */}
-          <nav className="flex gap-4">
+          <nav className="flex gap-2 md:gap-4 flex-wrap justify-center w-full md:w-auto">
             <button
               onClick={() => setCurrentMode('count')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-[20px] font-bold text-[1.2rem] transition-all ${
+              className={`flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-[15px] sm:rounded-[20px] font-bold text-[1rem] sm:text-[1.2rem] transition-all flex-1 sm:flex-none justify-center ${
                 currentMode === 'count' 
                   ? 'bg-white/40 shadow-md' 
                   : 'bg-white/20 hover:bg-white/30'
@@ -38,7 +38,7 @@ export default function App() {
             </button>
             <button
               onClick={() => setCurrentMode('shop')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-[20px] font-bold text-[1.2rem] transition-all ${
+              className={`flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-[15px] sm:rounded-[20px] font-bold text-[1rem] sm:text-[1.2rem] transition-all flex-1 sm:flex-none justify-center ${
                 currentMode === 'shop' 
                   ? 'bg-white/40 shadow-md' 
                   : 'bg-white/20 hover:bg-white/30'
@@ -49,7 +49,7 @@ export default function App() {
             </button>
             <button
               onClick={() => setCurrentMode('piggy')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-[20px] font-bold text-[1.2rem] transition-all ${
+              className={`flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-[15px] sm:rounded-[20px] font-bold text-[1rem] sm:text-[1.2rem] transition-all flex-1 sm:flex-none justify-center ${
                 currentMode === 'piggy' 
                   ? 'bg-white/40 shadow-md' 
                   : 'bg-white/20 hover:bg-white/30'
